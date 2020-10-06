@@ -5,7 +5,7 @@
   "main": "slides.js",
   "scripts": {
     "start": "parcel index.jade",
-    "build": "parcel build index.jade --out-dir docs/"
+    "build": "parcel build index.jade --public-url /gatsby-talk/ --out-dir docs/"
   },
   "author": "",
   "license": "ISC",
