@@ -5,7 +5,7 @@
   "main": "slides.js",
   "scripts": {
     "start": "parcel index.jade",
-    "build": "parcel build index.jade"
+    "build": "parcel build index.jade --out-dir docs/"
   },
   "author": "",
   "license": "ISC",
