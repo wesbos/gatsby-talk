@@ -1,0 +1,200 @@
+doctype html
+html
+  head
+      title Gatsby Talk
+      meta(charset='utf-8')
+      script(src='slides.js')
+      link(href="https://fonts.googleapis.com/css?family=Bevan|Carter+One|Shrikhand" rel="stylesheet")
+      link(href='./styles.styl'  rel='stylesheet' type='text/css')
+      //- link(href='https://mastergatsby.com/stylesheets/build/style-GAT.css?v=10'  rel='stylesheet' type='text/css')
+  body
+    section.slides.layout-regular.template-default
+      article.first
+        h1(style="font-size:250px;") Master Gatsby
+
+      article
+        h1 I&apos;m Wes Bos
+        p: img(src="images/canada-flag.png")
+        p I make web development courses and have a podcast called Syntax
+
+      article
+        img.wide(src="https://wes.io/p9uwzXke/content")
+
+      article
+        p(style="font-size:60px;") These slides will be available shortly after this talk <br>I&apos;ll tweet the link out.
+        img(src='images/Twitter_logo_white.png', width='300' style="margin:100px auto")
+
+        h2
+          a(href='http://twitter.com/wesbos', target='_blank') @wesbos
+
+      article
+        h1(style="font-size:250px;") Let's talk about Gatsby
+        p A mix bag of tips and tricks that will allow you to get the most out of Gatsby!
+
+      article
+        p A mix bag of tips and tricks that will allow you to get the most out of Gatsby!
+
+      article
+        h1 What is it? <br>What isn't it?
+
+      article.section
+        p It's a <mark>JavaScript framework</mark> for creating modern websites with React.js.
+
+      article.section
+        h1 What does<br> React do?
+        p Templating, State management, Component, Updating
+
+      article
+        h2.small With React, you put data in a template, and the template will update when the data changes. That's it!
+
+      article.section
+        h2 Gatsby Provides:
+        ul.build
+          li Routing
+          li Page Creation
+          li Asset handling
+          li Build Process
+          li + more
+
+      article.section
+        h2 So why is it awesome?
+        p Let's start with things that are hard about creating a modern website:
+
+      article
+        ul.build
+          li Image Compression
+          li Progressive Image Loading
+          li Pre-fetching Routes
+          li Code splitting
+          li Loading Critical CSS
+          li Asset Compression / Tree shaking
+          li Data Sourcing + Loading
+          li Caching HTML + Service Workers
+
+      article
+        p Gatsby does all these things for you so you can focus on building the site
+
+      article
+        h2 Image Compression + Progressive Image Loading
+        p: mark gatsby-image
+        img.wide(src="https://wes.io/04uOkQgz/content")
+      article
+        h2 Pre-fetching Routes + Code splitting
+        p Gatbsy will figure out which JS is needed in which pages, As you hover over a link to a page, it will on demand load them in
+      article
+        video(controls src="https://p198.p4.n0.cdn.getcloudapp.com/items/4guJ7XJN/Screen%20Recording%202020-10-05%20at%2004.08%20PM.mov?source=viewer")
+      article
+        h2 Critical CSS
+        p Just write your CSS, gatsby will figure out which of is is needed before the HTML is loaded
+      article
+        img.wide(src="https://wes.io/p9uwzZXq/content")
+      article
+        h2 Asset Compression / Tree shaking
+        p Part of the build
+      article
+        h2 Data Sourcing + Loading
+        p Gatsby provides a set of APIs that allows you to import any type of content into their graphql API
+      article
+        img.wide(src="https://wes.io/NQu1epGr/content")
+      article
+        h2 Caching HTML
+        p This is sort of the whole core of gatsby. It generates the HTML at build time so that when the user hits the website, it's already there.
+
+      article
+        h1 Tips
+
+      article
+        h1 Everything must go through Gatsby.
+        p One of the biggest Hurdles is thinking in terms of gatsby.
+
+      article
+        h3 Where do I put my images?
+        p You don't. You import them into your template. This way Gatsby is aware of them and can compress them
+      article
+        h3 Where do I link stylesheets?
+        p You don't. You import them into your template. This way Gatsby can compute critical css.
+
+      article
+        h3 Where do I fetch data?
+        p You source the data into Gatsby first. This way you can statically render it, and re-render only the templates needed because Gatsby knows where that data was used.
+
+      article
+        h3 You get the point
+        p If Gatsby is aware of every single image, asset, CSS style and node of data, it's able to do all the amazing things we talked about earlier.
+
+      article
+        h2 Tip: Wrap Every Page in your `&lt;Layout&gt;` automatically
+        p gatsby-browser.js and gatsby-node.js
+
+      article
+        img.wide(src="https://wes.io/7Ku8yxPP/content")
+
+      article
+        h1 Tip: Pass Context data to your Layout
+
+      article
+        img.wide(src="https://wes.io/mXu6m700/content")
+
+      article
+        img.wide(src="https://wes.io/ApuLOOBP/content")
+
+      article
+        h1 Tip: use fragments to bundle repetitive fields
+
+      article
+        img.wide(src="https://wes.io/YEuyddpy/content")
+
+      article
+        img.wide(src="https://wes.io/4guJxx9L/content")
+
+      article
+        h1 Tip: Pass only the data you need through context
+
+      article
+        img.wide(src="https://wes.io/5zuwJJA1/content")
+      article
+        p Then query that data in the template itself
+      article
+        img.wide(src="https://wes.io/2Nujrrq1/content")
+      article
+        p This will give you hot / live reloads when the data changes without having to restart the entire process.
+
+      article
+        h1 Tip: Use `esm` so you can use ES Modules for everything
+
+      article
+        img.wide(src="https://wes.io/04uOgg68/content")
+
+      article
+        img.wide(src="https://wes.io/P8uyYYXo/content")
+
+      article
+        p Then we don't need to worry about context switching between common JS and ES Modules
+
+      article
+        h1 Tip: Store context and providers in wrapRootElement.
+
+      article
+        img.wide(src="https://wes.io/qGuvDDLO/content", alt="")
+        p This allows us to persist data from page ot page
+
+      article
+        h1 Tip: Slow build times? Use the cloud!
+        p One downside to Gatsby can be painfully slow build times. Lots of posts and especially images can mean a website takes super long to build.
+
+      article
+        p Gatsby is aware of this!
+        ul
+          li gatsby incremental builds
+          li gatsby-parallel-runner
+          li Gatsby cloud
+
+      article
+        h1 That's it!
+        p Hopefully you learned a thing or two!
+
+      article
+        h1 Questions?
+
+    script(src='scripts.js')
+    //- script(src='custom.js')

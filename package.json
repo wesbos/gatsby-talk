@@ -1,0 +1,21 @@
+{
+  "name": "gatsby-talk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "slides.js",
+  "scripts": {
+    "start": "parcel index.jade",
+    "build": "parcel build index.jade"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "pug": "^3.0.0",
+    "request": "^2.83.0"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.12.4",
+    "waait": "^1.0.4"
+  }
+}
